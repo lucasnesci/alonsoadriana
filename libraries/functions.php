@@ -4,7 +4,7 @@
 // Connect to the database.
 function db_connect() {
   try {
-    $db = new PDO('mysql:host=localhost;dbname=lukaz89_alonsoadriana;charset=utf8', 'lukaz89_general', '1TWIsUau..M4');
+    $db = new PDO('mysql:host=localhost;dbname=lukaz89_alonsoadriana;charset=utf8', 'root', '');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     return $db;

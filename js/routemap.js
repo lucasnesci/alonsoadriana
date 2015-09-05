@@ -35,9 +35,16 @@ var app = Sammy('body', function () {
       });
   });
 
-  this.get('#/categoria/:name', function () {
+  this.get('#/categoria/:name/:imgId', function () {
     // Obtain category name
     var name = this.params['name'];
+    // Obtain image id and trigger click event on that image
+    // If not image found, it will just show the whole gallery.
+    var imgId = this.params['imgId'];
+    setTimeout(function(){
+      $("#"+imgId).eq(0).trigger('click');
+    }, 1000);
+
     $('#loading').show();
 
     $('#bs-example-navbar-collapse-1').removeClass('in');

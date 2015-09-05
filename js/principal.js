@@ -4,7 +4,29 @@ $(document).ready(function() {
   $(".fancybox")
     .attr('rel', 'gallery')
     .fancybox({
-        padding : 0
+      //padding : 0,
+      helpers : {
+          title : {
+              type: 'inside'
+          }
+      },
+      beforeShow: function () {
+        if (this.title) {
+          var title_original = encodeURIComponent(this.title);
+          // New line
+          this.title += ' | ';
+          // Prepare the URL for facebook
+          var url = this.href;
+          var url_splitted = url.split('/');
+          var imgCat = url_splitted[5];
+          var imgId = url_splitted[6].slice(0,-4);
+          var fb_url = location.protocol + "//" + location.hostname + "/%23/categoria/" + imgCat + "/" + imgId;
+          var img_url = location.protocol + "//" + "alonsoadriana.com.ar" + "/images/categories/" + imgCat + "/" + imgId + ".jpg";
+          // Add FaceBook like button
+          //this.title += '<i class="fa fa-facebook-square"></i> <a href="#" onclick="javascript:window.open(\'https://www.facebook.com/sharer/sharer.php?u='+fb_url+'\',\'Comparte en Facebook\',\'location=no,toolbar=no,width=350,height=350\');return false">Comparte en Facebook</span></a>';
+          this.title += '<i class="fa fa-facebook-square"></i> <a href="#" onclick="javascript:window.open(\'https://www.facebook.com/dialog/feed?app_id=675284685904511&link='+fb_url+'&picture='+img_url+'&name=Mira%20esta%20obra%20de%20Adriana%20Alonso%21%21%21&description=Titulo%3A%20'+title_original+'%20%7C%20Oleo%20sobre%20tela&redirect_uri=http://alonsoadriana.com.ar/popupClose.html\');">Compartir en Facebook</span></a>';
+        }
+      }
     });
 
   // Load spinner.

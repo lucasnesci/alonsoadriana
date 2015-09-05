@@ -13,6 +13,8 @@
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!-- Awesomfont -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Fancybox stylesheet -->
     <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
     <!-- bxSlider stylesheet -->
@@ -63,8 +65,9 @@
     <script type="text/javascript" src="js/principal.js"></script>
     <!-- Google Analytics for Sammy -->
     <script type="text/javascript" src="js/libraries/sammy.googleanalytics.js"></script>
-        <!-- Route mapping -->
+    <!-- Route mapping -->
     <script type="text/javascript" src="js/routemap.js"></script>
+    <!-- Google Analytics -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -73,6 +76,25 @@
 
       ga('create', 'UA-52860840-1', 'auto');
       ga('send', 'pageview');
+    </script>
+    
+    <!-- Facebook -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : 675284685904511,
+          xfbml      : true,
+          version    : 'v2.4'
+        });
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
     </script>
   </body>
 </html>

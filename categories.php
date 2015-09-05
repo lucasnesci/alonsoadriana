@@ -16,6 +16,7 @@ $db = db_connect();
   <img src="https://farm4.staticflickr.com/3926/14221302407_5a25e9550b.jpg">
 */
 if (isset($_GET['categoria'])) {
+  $base_url = "http://".$_SERVER['SERVER_NAME'];
   $category = $_GET['categoria'];
 
   $image_dir = "images/categories/".$category."/";
@@ -28,7 +29,7 @@ if (isset($_GET['categoria'])) {
   if ($stmt->rowCount() > 0) {
     echo '<div id="body" class="col-xs-12 col-md-12 black text-center fancybody">';
     while ($result = $stmt->fetchObject()) {
-      echo '<a class="fancybox" rel="fancybox-thumb" title="'.$result->img_title.'" href=" '.$image_dir.$result->img_id.".jpg".'"><img class="thumb" src="'.$thumb_dir.$result->img_id.".jpg".'"/></a>';
+      echo '<a class="fancybox" rel="fancybox-thumb" title="'.$result->img_title.'" href="'.$base_url."/".$image_dir.$result->img_id.".jpg".'"><img id='.$result->img_id.' class="thumb" src="'.$base_url."/".$thumb_dir.$result->img_id.".jpg".'"/></a>';
     }
     echo '</div>';
 
