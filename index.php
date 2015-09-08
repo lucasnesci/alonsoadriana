@@ -44,7 +44,7 @@
     </div>
     <div class="container">
       <div id="footer" class="footer text-center">
-          <p><a href="http://neschi.com">./neschi</a></p>
+          <p><a href="http://neschi.com" target="_blank">./neschi</a></p>
       </div>
     </div>
 
